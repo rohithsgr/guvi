@@ -1,0 +1,6 @@
+version: '3'
+services:
+  web:
+    image: rohithsgr/guviapp:1.1
+    ports:
+    - 8080:80
