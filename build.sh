@@ -20,7 +20,6 @@ echo "Now we will create an image using this docker file with build number"
 
 docker build -t rohithbuildapp:${BUILD_NUMBER} .
 
-docker rmi -f rohithbuildapp:${currentBuild.previousBuild.number}
 
 
 
