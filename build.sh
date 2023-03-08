@@ -18,7 +18,7 @@ cat Dockerfile
 
 echo "Now we will create an image using this docker file"
 
-docker build -t rohithbuildapp:$(BUILD_NUMBER) .
+docker build -t rohithbuildapp:latest .
 
 
 
