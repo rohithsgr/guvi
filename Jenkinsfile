@@ -11,14 +11,17 @@ pipeline{
                 
             }
         }
+        stage("Deploy"){
+            steps{
+                echo "We are in deploy stage. Lets deploy the image now using docker compose"
+                sh 'docker-compose up -y'
+                echo "Check with ip address http://75.101.191.34:80
+        
+            }
+        }
         stage("Push"){
             steps{
                 echo "We are in push stage"
-            }
-        }
-        stage("Deploy"){
-            steps{
-                echo "We are in deploy stage"
             }
         }
     }
