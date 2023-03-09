@@ -1,9 +1,6 @@
 pipeline{
     agent any
-    environment{
-        VERSION= "${BUILD_NUMBER}"
-        
-    }
+    
     stages{
         stage("Build"){
             steps{
@@ -28,7 +25,8 @@ pipeline{
                 echo "Now, lets push the image to dev repository in docker"
                 withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: 'docker_password', usernameVariable: 'docker_username')]) {
                     sh 'docker login --username=${docker_username} --password=${docker_password}'
-                    sh 'docker push rohithsgr/dev:${BUILD_NUMBER}'
+                    sh 'docker tag rohithsgr/dev:${BUILD_NUMBER} rohithsgr/dev:latest'
+                    sh 'docker push rohithsgr/dev:latest
                 }
                 
             }
