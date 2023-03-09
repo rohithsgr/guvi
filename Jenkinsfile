@@ -1,7 +1,7 @@
 pipeline{
     agent any
     environment{
-        version= "${BUILD_NUMBER}"
+        VERSION= "${BUILD_NUMBER}"
     }
     stages{
         stage("Build"){
