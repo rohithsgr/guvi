@@ -26,7 +26,7 @@ pipeline{
                 withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: 'docker_password', usernameVariable: 'docker_username')]) {
                     sh 'docker login --username=${docker_username} --password=${docker_password}'
                     sh 'docker tag rohithsgr/dev:${BUILD_NUMBER} rohithsgr/dev:latest'
-                    sh 'docker push rohithsgr/dev:latest
+                    sh 'docker push rohithsgr/dev:latest'
                 }
                 
             }
