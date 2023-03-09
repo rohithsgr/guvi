@@ -2,6 +2,7 @@ pipeline{
     agent any
     environment{
         VERSION= "${BUILD_NUMBER}"
+        
     }
     stages{
         stage("Build"){
