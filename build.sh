@@ -16,9 +16,11 @@ echo "Completed creating docker file. Below are its contents"
 
 cat Dockerfile
 
+
 echo "Now we will create an image using this docker file with when function using jenkins "
 
 docker build -t rohithsgr/dev:${BUILD_NUMBER} .
+
 
 
 
