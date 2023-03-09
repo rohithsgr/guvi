@@ -19,7 +19,7 @@ pipeline{
         
             }
         }
-        stage("Push"){
+        stage("Push to Docker Dev"){
             steps{
                 echo "Now, lets push the image to dev repository in docker"
                 withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: 'docker_password', usernameVariable: 'docker_username')]) {
